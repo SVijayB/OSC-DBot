@@ -17,7 +17,10 @@ async def oscEventNotif(event_channels):
     else:
         embed = command_event()
         for channel in event_channels:
-            await channel.send("@everyone", embed=embed)
+            message = await channel.send("@everyone", embed=embed)
+            await message.add_reaction("💯")
+            await message.add_reaction("🔥")
+            await message.add_reaction("🎉")
             print("[!] Server logs: Event alert sent in", channel.name)
 
 
